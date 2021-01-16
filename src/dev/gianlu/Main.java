@@ -28,6 +28,7 @@ public class Main {
         });
         return files;
     }
+
     private static String parseJson(String fName) throws FileNotFoundException {
         String occurrence="";
         JSONParser parser = new JSONParser();
@@ -40,6 +41,7 @@ public class Main {
         }
         return occurrence;
     }
+
     private static void processAll(String ext){
         Path startDir=Paths.get(dirPath);
         Integer i=0;
@@ -68,6 +70,7 @@ public class Main {
 
 
     }
+
     private static String fromHtml(String fName) throws IOException {
         File input = new File(fName);
         Document doc = (Document)Jsoup.parse(input, charSet);
@@ -75,6 +78,7 @@ public class Main {
         String titolo = elem.text();
         return titolo;
     }
+
     public static void main(String[] args)  {
 
         if(args.length<4){
@@ -94,4 +98,5 @@ public class Main {
         }
 
     }
+    
 }
